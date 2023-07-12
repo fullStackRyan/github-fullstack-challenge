@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { ClimbingBoxLoader } from "react-spinners";
 import { Repository } from "../types/Repository";
 import RepoOverviewCard from "../components/RepoOverviewCard";
 import SearchBox from "../components/SearchBox";
@@ -29,7 +30,11 @@ function HomePage(): JSX.Element {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <ClimbingBoxLoader color="#36d7b7" loading={loading} size={40} />
+      </div>
+    );
   }
 
   if (error) {
