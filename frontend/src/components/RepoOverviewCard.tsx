@@ -7,7 +7,7 @@ type Props = {
 
 const RepoOverviewCard: FC<Props> = ({ repo }) => {
   return (
-    <div className="rounded-lg shadow-lg p-4 bg-red">
+    <div className="rounded-lg shadow-lg p-4 bg-red transform transition-all duration-200 hover:scale-105">
       <div className="grid grid-cols-2 gap-4">
         <div className="col-span-2">
           <img src={repo.image} alt="Repository" />
