@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { ClimbingBoxLoader } from "react-spinners";
-import { Repository } from "../types/Repository";
+import { Repository } from "../types/Types";
 import RepoOverviewCard from "../components/RepoOverviewCard";
 import SearchBox from "../components/SearchBox";
 
@@ -44,7 +44,7 @@ function HomePage(): JSX.Element {
   return (
     <>
       <SearchBox onSubmit={(value) => setSearchValue(value)} />
-      <div className="grid grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-10 m-20">
+      <div className="grid grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-10 mt-10 mx-20 mb-20">
         {repos.map((repo, index) => (
           <Link key={repo.authorName + index} to={`/repo/${repo.authorName}`}>
             <RepoOverviewCard repo={repo} />
